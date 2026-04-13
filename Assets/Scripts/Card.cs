@@ -56,7 +56,7 @@ public class Card : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            transform.position = card + new Vector3 ()
+            //transform.position = card + new Vector3 ()
         }
     }
 
