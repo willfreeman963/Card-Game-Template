@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
+using Unity.ProjectAuditor.Editor;
 
 public class Card : MonoBehaviour
 {
@@ -20,7 +22,8 @@ public class Card : MonoBehaviour
     public TextMeshProUGUI costText;
     public TextMeshProUGUI damageText;
     public Image spriteImage;
-        
+
+    private Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,23 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 mouse;
+        mouse = Input.mousePosition;
+
+       if (Input.GetMouseButtonDown(0))   
+        {
+            Vector3 card;
+            card = new Vector3(transform.position.x, transform.position.y, 0);
+        }
+        if (Input.GetMouseButton(0))
+        {
+            transform.position = card + new Vector3 ()
+        }
+    }
+
+    void MouseButtonDown()
+    {
+        Vector3 card;
+        card = new Vector3(transform.position.x, transform.position.y, 0);
     }
 }
