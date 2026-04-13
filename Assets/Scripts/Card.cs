@@ -23,6 +23,9 @@ public class Card : MonoBehaviour
     public TextMeshProUGUI damageText;
     public Image spriteImage;
 
+    private Vector3 card;
+
+    private Vector3 arrow;
     private Vector3 offset;
 
     // Start is called before the first frame update
@@ -51,18 +54,16 @@ public class Card : MonoBehaviour
 
        if (Input.GetMouseButtonDown(0))   
         {
-            Vector3 card;
             card = new Vector3(transform.position.x, transform.position.y, 0);
+            arrow = Input.mousePosition;
         }
         if (Input.GetMouseButton(0))
         {
-            //transform.position = card + new Vector3 ()
+            offset = arrow - Input.mousePosition;
+            transform.position = card + offset;
         }
     }
-
-    void MouseButtonDown()
-    {
-        Vector3 card;
-        card = new Vector3(transform.position.x, transform.position.y, 0);
-    }
 }
+
+
+ 
