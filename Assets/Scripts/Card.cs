@@ -60,7 +60,7 @@ public class Card : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             offset = arrow - Input.mousePosition;
-            transform.position = card + offset;
+            transform.position = card - offset;
         }
     }
 }
