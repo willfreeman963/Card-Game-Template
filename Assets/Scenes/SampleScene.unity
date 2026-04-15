@@ -372,7 +372,7 @@ MonoBehaviour:
   deck: []
   player_deck:
   - {fileID: 11400000, guid: cdb3aa97ddfaa48fa929c363cfb62f46, type: 2}
-  - {fileID: 11400000, guid: 0bbaea5538bde4572a5e0246d87364fa, type: 2}
+  - {fileID: 11400000, guid: 33e2634b0f2e841eabb970bbf404ddca, type: 2}
   - {fileID: 11400000, guid: cdb3aa97ddfaa48fa929c363cfb62f46, type: 2}
   ai_deck: []
   player_hand: []
