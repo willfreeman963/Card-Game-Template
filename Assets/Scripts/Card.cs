@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using Unity.ProjectAuditor.Editor;
+using UnityEngine.EventSystems;
 
 public class Card : MonoBehaviour
 {
@@ -52,12 +53,12 @@ public class Card : MonoBehaviour
         Vector3 mouse;
         mouse = Input.mousePosition;
 
-       if (Input.GetMouseButtonDown(0))   
+       if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())   
         {
             card = new Vector3(transform.position.x, transform.position.y, 0);
             arrow = Input.mousePosition;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject())
         {
             offset = arrow - Input.mousePosition;
             transform.position = card - offset;
