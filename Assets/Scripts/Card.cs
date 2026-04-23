@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using Unity.ProjectAuditor.Editor;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class Card : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Card : MonoBehaviour
 
     private Vector3 arrow;
     private Vector3 offset;
+    private Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,7 @@ public class Card : MonoBehaviour
         costText.text = cost.ToString();
         damageText.text = damage.ToString();
         spriteImage.sprite = sprite;
-
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -67,6 +69,27 @@ public class Card : MonoBehaviour
         {
             transform.position = card;
         }
+        if(Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            CheckForClick();
+        }
+    }
+    void CheckForClick()
+    {
+        //get mouse position on screen (pixels)
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+
+        //convert pixels into world position
+        Vector3 worldPos = mainCamera.ScreenToWorldPoint(
+            new Vector3(mousePos.x, mousePos.y, 0));
+        //shoot raycast at that world position
+        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+        //if raycast hits this specific sprite, run logic
+        if(hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            Debug.Log("Sprite clicked");
+        }
+
     }
 }
 
