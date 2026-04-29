@@ -23,7 +23,8 @@ public class Card : MonoBehaviour{
     public TextMeshProUGUI costText;
     public TextMeshProUGUI damageText;
     public Image spriteImage;
-    private RectTransform rectTransform;
+    
+    
     private Canvas canvas;
 
     private Vector3 card;
@@ -31,6 +32,7 @@ public class Card : MonoBehaviour{
     private Vector3 arrow;
     private Vector3 offset;
     private Camera mainCamera;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +52,27 @@ public class Card : MonoBehaviour{
         mainCamera = Camera.main;
     }
 
-    // Update is called once per frame
 
+
+    // Update is called once per frame
+    void Update()
+    {
+        float leftLimit = Screen.width * 0.1f;
+        float rightLimit = Screen.width * 0.9f;
+        float bottomLimit = Screen.height * 0.5f;
+        float topLimit = Screen.height;
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if(screenPos.x > leftLimit && screenPos.x < rightLimit && screenPos.y > bottomLimit && screenPos.y < topLimit)
+        {
+            print("In bound");
+        }
+        //float x = transform.localPosition.x;
+        //float y = transform.localPosition.y;
+        //if(y > 300 && x > 500 && x < 3600 && y < 1800)
+        //{
+          //  print("card in boundary");
+        //}
+    }
 
 
 
