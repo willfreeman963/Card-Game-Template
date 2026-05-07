@@ -1,11 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public class dragUI : MonoBehaviour,
 IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 public Transform parentTransform;
+public float touched = 0;
 private Canvas canvas;
 
+public GameManager gameManager;
 
 
 void Awake()
@@ -17,12 +20,13 @@ public void OnBeginDrag(PointerEventData eventData)
 {
 // Called once when the drag starts
 Debug.Log("Started dragging " + gameObject.name);
+gameManager.dragHappened = true;
 }
 public void OnDrag(PointerEventData eventData)
 {
 // Called every frame while dragging
 parentTransform.position = new Vector2(parentTransform.position.x,parentTransform.position.y) + eventData.delta;
-
+touched = 1;
 }
 public void OnEndDrag(PointerEventData eventData)
 {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class GameManager : MonoBehaviour
     public Vector3 player_hand_pos;
     public Vector3 ai_hand_pos;
     public Card blank;
+    public float timer = 0;
+
+    public bool dragHappened = false;
+
+    public Scene win;
+    public Scene lose;
 
     private void Awake()
     {
@@ -39,12 +46,27 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += 1 * Time.deltaTime;
+
+        if (timer > 10)
+        {
+            if(dragHappened)
+            {
+                SceneManager.LoadScene("win");
+
+            }
+            else
+            {
+                SceneManager.LoadScene("lose");
+            }
+
+        }
+
     }
 
     void Deal()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
             //create blank card
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
