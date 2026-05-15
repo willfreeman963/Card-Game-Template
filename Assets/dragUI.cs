@@ -9,30 +9,45 @@ public float touched = 0;
 private Canvas canvas;
 
 public GameManager gameManager;
-
+public bool mouseDown;
 
 void Awake()
 {
 //rectTransform = GetComponentInParent<RectTransform>();
 canvas = GetComponentInParent<Canvas>();
+//mouseDown = false;
 }
+
+
+
 public void OnBeginDrag(PointerEventData eventData)
 {
 // Called once when the drag starts
 Debug.Log("Started dragging " + gameObject.name);
-gameManager.dragHappened = true;
+gameManager.dragHappened = false;
+mouseDown = true;
 }
+
+
+
 public void OnDrag(PointerEventData eventData)
 {
 // Called every frame while dragging
 parentTransform.position = new Vector2(parentTransform.position.x,parentTransform.position.y) + eventData.delta;
 touched = 1;
+mouseDown = true;
 }
+
+
+
 public void OnEndDrag(PointerEventData eventData)
 {
 // Called once when the drag ends
 Debug.Log("Finished dragging " + gameObject.name);
+mouseDown = false;
 }
+
+
   
 }
 

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         timer += 1 * Time.deltaTime;
 
-        if (timer > 10)
+        if (timer > 60)
         {
             if(dragHappened)
             {

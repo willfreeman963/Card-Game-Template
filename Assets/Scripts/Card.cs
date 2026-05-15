@@ -23,6 +23,9 @@ public class Card : MonoBehaviour{
     public TextMeshProUGUI costText;
     public TextMeshProUGUI damageText;
     public Image spriteImage;
+    public GameManager gameManager;
+    public Transform parentTransform;
+    public float touched = 0;
     
     
     private Canvas canvas;
@@ -32,7 +35,7 @@ public class Card : MonoBehaviour{
     private Vector3 arrow;
     private Vector3 offset;
     private Camera mainCamera;
-    
+    private dragUI dragScript;
 
     // Start is called before the first frame update
     void Start()
@@ -50,33 +53,59 @@ public class Card : MonoBehaviour{
         damageText.text = damage.ToString();
         spriteImage.sprite = sprite;
         mainCamera = Camera.main;
+        dragScript = Object.FindAnyObjectByType<dragUI>();
+        if (dragScript == null)
+        {
+            Debug.Log("Unable to find dragging script");
+        }
     }
-
+    /*void Awake()
+    {
+    //rectTransform = GetComponentInParent<RectTransform>();
+    canvas = GetComponentInParent<Canvas>();
+    }*/
+    
 
 
     // Update is called once per frame
     void Update()
-    {
+        {
         float leftLimit = Screen.width * 0.1f;
         float rightLimit = Screen.width * 0.9f;
         float bottomLimit = Screen.height * 0.5f;
         float topLimit = Screen.height;
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if(screenPos.x > leftLimit && screenPos.x < rightLimit && screenPos.y > bottomLimit && screenPos.y < topLimit)
-        {
-            print("In bound");
+        if(screenPos.x > leftLimit && screenPos.x < rightLimit && screenPos.y > bottomLimit && screenPos.y < topLimit
+        && !Input.GetMouseButton(0))
+            {
+                print("In bound and mouse released, card is ready to move back");
+            }
         }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
         //float x = transform.localPosition.x;
         //float y = transform.localPosition.y;
         //if(y > 300 && x > 500 && x < 3600 && y < 1800)
         //{
           //  print("card in boundary");
         //}
-    }
+    
 
 
 
-}
+
+
 
 
  
