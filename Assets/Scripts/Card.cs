@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using Unity.ProjectAuditor.Editor;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using NUnit.Framework;
 
 public class Card : MonoBehaviour{
     public Card_data data;
@@ -26,6 +27,9 @@ public class Card : MonoBehaviour{
     public GameManager gameManager;
     public Transform parentTransform;
     public float touched = 0;
+
+    public float origin_x = 0;
+    public float origin_y = 0;
     
     
     private Canvas canvas;
@@ -36,6 +40,8 @@ public class Card : MonoBehaviour{
     private Vector3 offset;
     private Camera mainCamera;
     private dragUI dragScript;
+
+    private bool mouseDown;
 
     // Start is called before the first frame update
     void Start()
@@ -75,14 +81,45 @@ public class Card : MonoBehaviour{
         float bottomLimit = Screen.height * 0.5f;
         float topLimit = Screen.height;
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        
+
+        // Returns true every frame the button is held down
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            origin_x = transform.position.x;
+            origin_y = transform.position.y;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            transform.position = new Vector3(origin_x, origin_y ,0);
+             
+        }
+        if (Input.GetMouseButton(0)) 
+        {
+            mouseDown = true;
+        } else
+        {
+            mouseDown = false;
+        }
+
         if(screenPos.x > leftLimit && screenPos.x < rightLimit && screenPos.y > bottomLimit && screenPos.y < topLimit
-        && !Input.GetMouseButton(0))
+        && mouseDown == false)
             {
                 print("In bound and mouse released, card is ready to move back");
             }
         }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "placebox")
+        {
+            print("do stuff");
+        }
     }
+
+}
 
 
 
