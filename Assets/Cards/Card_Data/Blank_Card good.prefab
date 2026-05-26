@@ -202,6 +202,11 @@ MonoBehaviour:
   costText: {fileID: 414206449628904893}
   damageText: {fileID: 6299977514984050974}
   spriteImage: {fileID: 5389202851549873593}
+  gameManager: {fileID: 0}
+  parentTransform: {fileID: 0}
+  touched: 0
+  origin_x: 0
+  origin_y: 0
 --- !u!61 &1096016070060491641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -551,6 +556,7 @@ MonoBehaviour:
   parentTransform: {fileID: 7352966142991444963}
   touched: 0
   gameManager: {fileID: 0}
+  mouseDown: 0
 --- !u!1 &4179017240035319439
 GameObject:
   m_ObjectHideFlags: 0

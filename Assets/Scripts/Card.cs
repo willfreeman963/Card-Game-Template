@@ -8,6 +8,7 @@ using Unity.ProjectAuditor.Editor;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using NUnit.Framework;
+using Unity.Mathematics;
 
 public class Card : MonoBehaviour{
     public Card_data data;
@@ -42,6 +43,10 @@ public class Card : MonoBehaviour{
     private dragUI dragScript;
 
     private bool mouseDown;
+    [SerializeField] private GameObject Orc;
+    [SerializeField] private GameObject Fairy;
+    [SerializeField] private GameObject Spirit;
+    [SerializeField] private GameObject Wizard;
 
     // Start is called before the first frame update
     void Start()
@@ -91,11 +96,14 @@ public class Card : MonoBehaviour{
             origin_y = transform.position.y;
         }
 
+
         if (Input.GetMouseButtonUp(0))
         {
             transform.position = new Vector3(origin_x, origin_y ,0);
-             
+            Instantiate(Orc, new Vector3(0,0,0), Quaternion.identity);
         }
+
+
         if (Input.GetMouseButton(0)) 
         {
             mouseDown = true;
@@ -104,11 +112,7 @@ public class Card : MonoBehaviour{
             mouseDown = false;
         }
 
-        if(screenPos.x > leftLimit && screenPos.x < rightLimit && screenPos.y > bottomLimit && screenPos.y < topLimit
-        && mouseDown == false)
-            {
-                print("In bound and mouse released, card is ready to move back");
-            }
+        
         }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -120,23 +124,6 @@ public class Card : MonoBehaviour{
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-        //float x = transform.localPosition.x;
-        //float y = transform.localPosition.y;
-        //if(y > 300 && x > 500 && x < 3600 && y < 1800)
-        //{
-          //  print("card in boundary");
-        //}
     
 
 
