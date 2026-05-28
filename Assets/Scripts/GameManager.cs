@@ -53,13 +53,11 @@ public class GameManager : MonoBehaviour
             if(dragHappened)
             {
                 SceneManager.LoadScene("win");
-
             }
             else
             {
                 SceneManager.LoadScene("lose");
             }
-
         }
 
     }

@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using NUnit.Framework;
 using Unity.Mathematics;
+using UnityEngine.UIElements;
 
 public class Card : MonoBehaviour{
     public Card_data data;
@@ -24,7 +25,7 @@ public class Card : MonoBehaviour{
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI costText;
     public TextMeshProUGUI damageText;
-    public Image spriteImage;
+    public UnityEngine.UI.Image spriteImage;
     public GameManager gameManager;
     public Transform parentTransform;
     public float touched = 0;
@@ -32,6 +33,7 @@ public class Card : MonoBehaviour{
     public float origin_x = 0;
     public float origin_y = 0;
     
+    private int toggle = 0;
     
     private Canvas canvas;
 
@@ -62,7 +64,7 @@ public class Card : MonoBehaviour{
         healthText.text = health.ToString();
         costText.text = cost.ToString();
         damageText.text = damage.ToString();
-        spriteImage.sprite = sprite;
+        //spriteImage.sprite = sprite;
         mainCamera = Camera.main;
         dragScript = Object.FindAnyObjectByType<dragUI>();
         if (dragScript == null)
@@ -94,13 +96,19 @@ public class Card : MonoBehaviour{
         {
             origin_x = transform.position.x;
             origin_y = transform.position.y;
+            toggle = 0;
         }
 
 
         if (Input.GetMouseButtonUp(0))
         {
-            transform.position = new Vector3(origin_x, origin_y ,0);
-            Instantiate(Orc, new Vector3(0,0,0), Quaternion.identity);
+            if (toggle == 0)
+            {
+                transform.position = new Vector3(origin_x, origin_y ,0);
+                Instantiate(Orc, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+                toggle = 1;
+            }
+                
         }
 
 
@@ -128,8 +136,3 @@ public class Card : MonoBehaviour{
 
 
 
-
-
-
-
- 
