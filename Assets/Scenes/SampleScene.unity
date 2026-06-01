@@ -504,9 +504,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8657046853399159787, guid: f6ca7ad2049de4699b58187fdab37a93, type: 3}
     - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Orc
+      value: 
+      objectReference: {fileID: 704576085090575539, guid: adf237e77acdf4e019997285ada76e5c, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 33e2634b0f2e841eabb970bbf404ddca, type: 2}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Fairy
+      value: 
+      objectReference: {fileID: 4966475540632133019, guid: cb26bf0e2beec449cb99a01083e281ed, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Spirit
+      value: 
+      objectReference: {fileID: 7319356795608412251, guid: 0144a56770b624371855afb3f3419899, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Wizard
+      value: 
+      objectReference: {fileID: 2312208230533971816, guid: a8939c9eb326843ccaf8b2f7f65a8872, type: 3}
     - target: {fileID: 4719594797748916828, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 927
@@ -743,9 +759,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8657046853399159787, guid: f6ca7ad2049de4699b58187fdab37a93, type: 3}
     - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Orc
+      value: 
+      objectReference: {fileID: 704576085090575539, guid: adf237e77acdf4e019997285ada76e5c, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: cdb3aa97ddfaa48fa929c363cfb62f46, type: 2}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Fairy
+      value: 
+      objectReference: {fileID: 4966475540632133019, guid: cb26bf0e2beec449cb99a01083e281ed, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Spirit
+      value: 
+      objectReference: {fileID: 7319356795608412251, guid: 0144a56770b624371855afb3f3419899, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: Wizard
+      value: 
+      objectReference: {fileID: 2312208230533971816, guid: a8939c9eb326843ccaf8b2f7f65a8872, type: 3}
     - target: {fileID: 4719594797748916828, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 936
@@ -1081,6 +1113,22 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 622756965}
+    - target: {fileID: 6586811925518288809, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
+      propertyPath: Orc
+      value: 
+      objectReference: {fileID: 704576085090575539, guid: adf237e77acdf4e019997285ada76e5c, type: 3}
+    - target: {fileID: 6586811925518288809, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
+      propertyPath: Fairy
+      value: 
+      objectReference: {fileID: 4966475540632133019, guid: cb26bf0e2beec449cb99a01083e281ed, type: 3}
+    - target: {fileID: 6586811925518288809, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
+      propertyPath: Spirit
+      value: 
+      objectReference: {fileID: 7319356795608412251, guid: 0144a56770b624371855afb3f3419899, type: 3}
+    - target: {fileID: 6586811925518288809, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
+      propertyPath: Wizard
+      value: 
+      objectReference: {fileID: 2312208230533971816, guid: a8939c9eb326843ccaf8b2f7f65a8872, type: 3}
     - target: {fileID: 7352966142991444963, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1018
