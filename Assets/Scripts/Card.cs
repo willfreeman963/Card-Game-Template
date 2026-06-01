@@ -25,7 +25,9 @@ public class Card : MonoBehaviour{
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI costText;
     public TextMeshProUGUI damageText;
-    public UnityEngine.UI.Image spriteImage;
+    public UnityEngine.UIElements.Image spriteImage;
+
+    //UnityEngine.UI.Image' and 'UnityEngine.UIElements.Image
     public GameManager gameManager;
     public Transform parentTransform;
     public float touched = 0;
