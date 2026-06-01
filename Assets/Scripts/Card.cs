@@ -106,9 +106,23 @@ public class Card : MonoBehaviour{
         {
             if (toggle == 0)
             {
+                print("Card_name is:");
+                print(card_name);
                 transform.position = new Vector3(origin_x, origin_y ,0);
-                Instantiate(Orc, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+                if (card_name == "Orc")
+                {
+                    Instantiate(Orc, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+                }
+                if (card_name == "Fairy")
+                {
+                    Instantiate(Fairy, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity); 
+                }
+                if (card_name == "Wizard")
+                {
+                    Instantiate(Wizard, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+                }
                 toggle = 1;
+
             }
                 
         }
