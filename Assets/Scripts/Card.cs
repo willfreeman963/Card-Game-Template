@@ -112,14 +112,17 @@ public class Card : MonoBehaviour{
                 if (card_name == "Orc")
                 {
                     Instantiate(Orc, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+                    print("Making Orc");
                 }
                 if (card_name == "Fairy")
                 {
                     Instantiate(Fairy, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity); 
+                    print("Making Fairy");
                 }
                 if (card_name == "Wizard")
                 {
                     Instantiate(Wizard, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+                    print("making wizard");
                 }
                 toggle = 1;
 
