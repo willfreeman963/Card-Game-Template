@@ -523,6 +523,10 @@ PrefabInstance:
       propertyPath: Wizard
       value: 
       objectReference: {fileID: 2312208230533971816, guid: a8939c9eb326843ccaf8b2f7f65a8872, type: 3}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: card_name
+      value: Orc
+      objectReference: {fileID: 0}
     - target: {fileID: 4719594797748916828, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 927
@@ -1121,10 +1125,6 @@ PrefabInstance:
       propertyPath: Orc
       value: 
       objectReference: {fileID: 704576085090575539, guid: adf237e77acdf4e019997285ada76e5c, type: 3}
-    - target: {fileID: 6586811925518288809, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
-      propertyPath: data
-      value: 
-      objectReference: {fileID: 11400000, guid: b51a9ee5736df406f88ffb256bee1e3d, type: 2}
     - target: {fileID: 6586811925518288809, guid: 60e8d553e45c344a8a1c88a622193e48, type: 3}
       propertyPath: Fairy
       value: 
